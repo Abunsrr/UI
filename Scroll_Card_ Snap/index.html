@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cards</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            HTML
+        </div>
+        <div class="card">
+            CSS
+        </div>
+        <div class="card">
+            JS
+        </div>
+        <div class="card">
+            Python
+        </div>
+    </div>
+</body>
+<script>
+
+    // Inside your existing JavaScript or within a <script> tag
+const container = document.querySelector('.container');
+let scrollPosition = 0; 
+
+function autoScroll() {
+  scrollPosition += 2;  // Adjust scroll speed by changing this value
+  container.scrollTo({
+    left: scrollPosition,
+    behavior: 'smooth' 
+  });
+
+  // Check if we need to loop back to the beginning
+  if (scrollPosition >= container.scrollWidth - container.clientWidth) {
+    scrollPosition = 0;
+  }
+}
+
+setInterval(autoScroll, 50); // Update scroll every 50 milliseconds
+
+</script>
+</html>
